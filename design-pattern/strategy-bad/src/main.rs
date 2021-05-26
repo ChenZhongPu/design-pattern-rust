@@ -1,4 +1,4 @@
-use strategy::{ModelDuck, Duck, FlyRocketPowered};
+use strategy_bad::{ModelDuck, Duck, FlyRocketPowered};
 
 fn main() {
     let mut duck = ModelDuck::new();

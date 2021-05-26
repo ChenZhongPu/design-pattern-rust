@@ -1,5 +1,5 @@
 [package]
-name = "strategy-bad"
+name = "strategy"
 version = "0.1.0"
 authors = ["Zhongpu Chen <chenloveit@gmail.com>"]
 edition = "2018"
