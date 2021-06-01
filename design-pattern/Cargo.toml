@@ -3,4 +3,5 @@
 members = [
     "strategy-bad",
     'strategy',
+    'observer',
 ]

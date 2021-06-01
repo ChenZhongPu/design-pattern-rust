@@ -1,6 +1,7 @@
 mod fly_behavior;
 mod quack_behavior;
 mod duck;
+mod duck2;
 
 pub use fly_behavior::FlyBehavior;
 pub use fly_behavior::FlyRocketPowered;
@@ -15,3 +16,5 @@ pub use quack_behavior::FakeQuack;
 pub use duck::Duck;
 pub use duck::MallardDuck;
 pub use duck::ModelDuck;
+
+pub use duck2::Duck as Duck2;
