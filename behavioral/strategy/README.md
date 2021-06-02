@@ -6,7 +6,7 @@ In the Chapter 1 of `HFDP Book`, we would like to change the behaviors of a `duc
 # Strategy 1
 In the `simple SimUDuck` example, the `Duck` itself is an abstract class, and lots of other types of ducks inherit from the Duck class. But in fact, the strategy pattern *does not* require such inheritance. So the minimal UML class diagram (adapted from [wikipedia](https://en.wikipedia.org/wiki/Strategy_pattern)) is illustrated in the following:
 
-![strategy](image/strategy.png)
+![strategy](https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png)
 
 In Rust, we use trait ([fly_behavior.rs](strategy-1/src/fly_behavior.rs) and [quack_behavior.rs](strategy-1/src/fly_behavior.rs)) to describe such behaviors.
 
