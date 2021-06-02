@@ -11,5 +11,5 @@ fn main() {
 
     weather_data.register_observer(Box::new(PredictDisplay::new(44)));
 
-    weather_data.set_measusrements(32.0, 56.0, 180.1);
+    weather_data.set_measurements(32.0, 56.0, 180.1);
 }

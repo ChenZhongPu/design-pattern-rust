@@ -41,8 +41,8 @@ impl WeatherData {
         self.notify_observers();
     }
 
-    pub fn set_measusrements(&mut self, temperature: f64,
-                             humidity: f64, pressure: f64) {
+    pub fn set_measurements(&mut self, temperature: f64,
+                            humidity: f64, pressure: f64) {
         self.temperature = temperature;
         self.humidity = humidity;
         self.pressure = pressure;
