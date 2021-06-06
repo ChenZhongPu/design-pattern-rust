@@ -1,9 +1,0 @@
-[workspace]
-
-members = [
-    "strategy-bad",
-    'strategy',
-    'observer',
-    'decorator',
-    ''
-]
