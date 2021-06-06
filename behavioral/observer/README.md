@@ -55,3 +55,8 @@ Can `Rc` solve this problem? No! [Via immutable references, Rc<T> allows you to 
 
 # Observer 2
 To address the problem in `Observer 1`, we have to use *Interior mutability*. See more at [RefCell<T> and the Interior Mutability Pattern](https://doc.rust-lang.org/book/ch15-05-interior-mutability.html).
+
+In fact, `Box<RefCell<T>>` will make code cleaner, but it always moves. And we can use `Rc<RefCell<T>>`, and refer to [Rc<RefCell<Dog>> to Rc<RefCell<dyn AnimalT>>](https://users.rust-lang.org/t/rc-refcell-dog-to-rc-refcell-dyn-animalt/29511).
+
+## to do
+Try to make it concise.
