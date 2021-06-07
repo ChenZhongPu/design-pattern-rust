@@ -11,6 +11,13 @@ In the Chapter 4 of `HFDP Book`, we would like to instantiate concrete `Pizza` o
 # Factory Method
 Firstly, we merge `store` and `factory` here; in other words, `store` is essentially a `factory` which can produce products. In the light of `dependency inversion principle`, both `store` and `pizza` are abstract (trait in Rust).
 
+Note that the method of `factory` is usually a static one (associate function in Rust), and the refactor is simple:
+
+```rust
+trait PizzaStore {
+    fn create_pizza(t: &str) -> Box<dyn Pizza>;
+```
+
 # Abstract Factory
 > `The Abstract Factory Pattern` provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
