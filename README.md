@@ -12,3 +12,6 @@ Besides pure code about design patterns, necessary documents covering OO (object
 
 ## Structural
 - [Decorator Pattern](structural/decorator). Chapter 3 of HFDP Book.
+
+## Creational
+- [Factory Method](creational/factory). Chapter 4 of HFDP Book.
