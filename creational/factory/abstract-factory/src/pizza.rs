@@ -1,8 +1,8 @@
-use crate::{Dough, Sauce, Cheese, Clams, Veggies};
 use crate::pizza_ingredient_factory::PizzaIngredientFactory;
+use crate::{Cheese, Clams, Dough, Sauce, Veggies};
 use std::fmt;
 
-pub trait Pizza : fmt::Display {
+pub trait Pizza: fmt::Display {
     fn prepare(&mut self);
     fn bake(&self) {
         println!("Bake for 25 minutes at 350");
@@ -27,8 +27,11 @@ pub struct CheesePizza {
 impl CheesePizza {
     pub fn new(factory: Box<dyn PizzaIngredientFactory>, name: &str) -> Self {
         CheesePizza {
-           name: String::from(name), factory, dough: None, sauce: None,
-            cheese: None
+            name: String::from(name),
+            factory,
+            dough: None,
+            sauce: None,
+            cheese: None,
         }
     }
 }
@@ -42,16 +45,20 @@ impl Pizza for CheesePizza {
     }
 
     fn get_name(&self) -> &str {
-       &self.name
+        &self.name
     }
 }
 
 impl fmt::Display for CheesePizza {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "name: {} \n dough: {} \n sauce: {} \n cheese: {}", self.name,
-        self.dough.as_ref().unwrap(),
-               self.sauce.as_ref().unwrap(),
-               self.cheese.as_ref().unwrap())
+        write!(
+            f,
+            "name: {} \n dough: {} \n sauce: {} \n cheese: {}",
+            self.name,
+            self.dough.as_ref().unwrap(),
+            self.sauce.as_ref().unwrap(),
+            self.cheese.as_ref().unwrap()
+        )
     }
 }
 
@@ -66,8 +73,12 @@ pub struct ClamPizza {
 impl ClamPizza {
     pub fn new(factory: Box<dyn PizzaIngredientFactory>, name: &str) -> Self {
         ClamPizza {
-            name: String::from(name), factory, dough: None, sauce: None,
-            cheese: None, clam: None,
+            name: String::from(name),
+            factory,
+            dough: None,
+            sauce: None,
+            cheese: None,
+            clam: None,
         }
     }
 }
@@ -87,11 +98,15 @@ impl Pizza for ClamPizza {
 
 impl fmt::Display for ClamPizza {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "name: {} \n dough: {} \n sauce: {} \n cheese: {} \n clam: {}", self.name,
-               self.dough.as_ref().unwrap(),
-               self.sauce.as_ref().unwrap(),
-               self.cheese.as_ref().unwrap(),
-               self.clam.as_ref().unwrap())
+        write!(
+            f,
+            "name: {} \n dough: {} \n sauce: {} \n cheese: {} \n clam: {}",
+            self.name,
+            self.dough.as_ref().unwrap(),
+            self.sauce.as_ref().unwrap(),
+            self.cheese.as_ref().unwrap(),
+            self.clam.as_ref().unwrap()
+        )
     }
 }
 
@@ -106,8 +121,12 @@ pub struct VeggiePizza {
 impl VeggiePizza {
     pub fn new(factory: Box<dyn PizzaIngredientFactory>, name: &str) -> Self {
         VeggiePizza {
-            name: String::from(name), factory, dough: None, sauce: None,
-            cheese: None, veggies: None,
+            name: String::from(name),
+            factory,
+            dough: None,
+            sauce: None,
+            cheese: None,
+            veggies: None,
         }
     }
 }
@@ -127,8 +146,14 @@ impl Pizza for VeggiePizza {
 
 impl fmt::Display for VeggiePizza {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "name: {} \n dough: {} \n sauce: {} \n cheese: {} \n veggies num: {}", self.name,
-               self.dough.as_ref().unwrap(), self.sauce.as_ref().unwrap(),
-               self.cheese.as_ref().unwrap(), self.veggies.as_ref().unwrap().len())
+        write!(
+            f,
+            "name: {} \n dough: {} \n sauce: {} \n cheese: {} \n veggies num: {}",
+            self.name,
+            self.dough.as_ref().unwrap(),
+            self.sauce.as_ref().unwrap(),
+            self.cheese.as_ref().unwrap(),
+            self.veggies.as_ref().unwrap().len()
+        )
     }
 }

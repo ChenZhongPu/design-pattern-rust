@@ -1,5 +1,9 @@
-use crate::{Dough, Cheese, Veggies, Pepperoni, Clams, ThinCrustDough, MarinaraSauce, ReggianoCheese, Garlic, Onion, MushRoom, RedPepper, SlicedPepperoni, FreshClams, ThickCrustDough, PlumTomatoSauce, MozzarellaCheese, Eggplant, FrozenClams};
 use crate::Sauce;
+use crate::{
+    Cheese, Clams, Dough, Eggplant, FreshClams, FrozenClams, Garlic, MarinaraSauce,
+    MozzarellaCheese, MushRoom, Onion, Pepperoni, PlumTomatoSauce, RedPepper, ReggianoCheese,
+    SlicedPepperoni, ThickCrustDough, ThinCrustDough, Veggies,
+};
 
 pub trait PizzaIngredientFactory {
     fn create_dough(&self) -> Box<dyn Dough>;
@@ -25,7 +29,12 @@ impl PizzaIngredientFactory for NYPizzaIngredientFactory {
     }
 
     fn create_veggies(&self) -> Vec<Box<dyn Veggies>> {
-        vec![Box::new(Garlic), Box::new(Onion), Box::new(MushRoom), Box::new(RedPepper)]
+        vec![
+            Box::new(Garlic),
+            Box::new(Onion),
+            Box::new(MushRoom),
+            Box::new(RedPepper),
+        ]
     }
 
     fn create_pepperoni(&self) -> Box<dyn Pepperoni> {

@@ -31,14 +31,14 @@ impl CheesePizza {
 }
 
 impl Pizza for CheesePizza {
-   fn get_name(&self) -> &str {
-       &self.name
-   } 
+    fn get_name(&self) -> &str {
+        &self.name
+    }
 }
 
 pub struct ClamPizza {
     name: String,
-} 
+}
 
 impl ClamPizza {
     pub fn new() -> Self {

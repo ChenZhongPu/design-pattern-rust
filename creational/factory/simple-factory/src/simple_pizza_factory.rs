@@ -1,6 +1,6 @@
-use crate::Pizza;
-use crate::ClamPizza;
 use crate::CheesePizza;
+use crate::ClamPizza;
+use crate::Pizza;
 use crate::VeggiePizza;
 
 pub struct SimplePizzaFactory;

@@ -11,6 +11,4 @@ fn main() {
     duck.set_fly_behavior(Box::new(FlyWithWings));
     duck.set_quack_behavior(Box::new(Squeak));
     duck.perform_quack();
-
 }
-

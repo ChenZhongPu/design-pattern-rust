@@ -13,9 +13,14 @@ impl CurrentConditionDisplay {
 }
 impl Observer for CurrentConditionDisplay {
     fn update(&self, tmp: f64) {
-        println!("CurrentConditionDisplay ({}) gets temperature = {}", self.id, tmp);
+        println!(
+            "CurrentConditionDisplay ({}) gets temperature = {}",
+            self.id, tmp
+        );
     }
-    fn get_id(&self) -> usize { self.id }
+    fn get_id(&self) -> usize {
+        self.id
+    }
 }
 
 pub struct PredictDisplay {
@@ -31,7 +36,13 @@ impl PredictDisplay {
 impl Observer for PredictDisplay {
     fn update(&self, tmp: f64) {
         // a fake predication
-        println!("PredicatDisplay ({}) predicts temperature = {}", self.id, tmp + 0.1);
+        println!(
+            "PredicatDisplay ({}) predicts temperature = {}",
+            self.id,
+            tmp + 0.1
+        );
     }
-    fn get_id(&self) -> usize { self.id }
+    fn get_id(&self) -> usize {
+        self.id
+    }
 }

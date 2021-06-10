@@ -20,9 +20,10 @@ impl<'a> WeatherData<'a> {
     }
     pub fn remove_observer(&mut self, observer: &'a dyn Observer) {
         self.observers.remove(
-            self.observers.iter()
+            self.observers
+                .iter()
                 .position(|x| x.get_id() == observer.get_id())
-                .expect("observer not found")
+                .expect("observer not found"),
         );
     }
     pub fn notify_observers(&self) {

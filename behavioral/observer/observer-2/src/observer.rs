@@ -13,9 +13,14 @@ impl CurrentConditionDisplay {
 }
 impl Observer for CurrentConditionDisplay {
     fn update(&mut self, tmp: f64) {
-        println!("CurrentConditionDisplay ({}) gets temperature = {}", self.id, tmp);
+        println!(
+            "CurrentConditionDisplay ({}) gets temperature = {}",
+            self.id, tmp
+        );
     }
-    fn get_id(&self) -> usize { self.id }
+    fn get_id(&self) -> usize {
+        self.id
+    }
 }
 
 pub struct PredictDisplay {
@@ -25,7 +30,10 @@ pub struct PredictDisplay {
 
 impl PredictDisplay {
     pub fn new(id: usize) -> Self {
-        PredictDisplay { id, last_temp: f64::NAN }
+        PredictDisplay {
+            id,
+            last_temp: f64::NAN,
+        }
     }
 }
 
@@ -35,10 +43,16 @@ impl Observer for PredictDisplay {
         if self.last_temp.is_nan() {
             println!("PredicatiDisplay ({}) cannot predict now", self.id);
         } else {
-            println!("PredicatDisplay ({}) predicts temperature = {}", self.id, (tmp + self.last_temp) / 2.0);
+            println!(
+                "PredicatDisplay ({}) predicts temperature = {}",
+                self.id,
+                (tmp + self.last_temp) / 2.0
+            );
         }
         self.last_temp = tmp;
     }
 
-    fn get_id(&self) -> usize { self.id }
+    fn get_id(&self) -> usize {
+        self.id
+    }
 }

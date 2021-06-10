@@ -4,12 +4,12 @@ use crate::PizzaStore;
 pub struct NYPizzaStore;
 impl PizzaStore for NYPizzaStore {
     fn create_pizza(&self, t: &str) -> Box<dyn Pizza> {
-       match t {
-           "cheese" => Box::new(NYStyleCheesePizza::new()),
-           "veggie" => Box::new(NYStyleVeggiePizza::new()),
-           "clam" => Box::new(NYStyleClamPizza::new()),
-           _ => panic!("no such type"),
-       }
+        match t {
+            "cheese" => Box::new(NYStyleCheesePizza::new()),
+            "veggie" => Box::new(NYStyleVeggiePizza::new()),
+            "clam" => Box::new(NYStyleClamPizza::new()),
+            _ => panic!("no such type"),
+        }
     }
 }
 
@@ -38,7 +38,7 @@ pub struct NYStyleClamPizza {
 impl NYStyleClamPizza {
     pub fn new() -> Self {
         NYStyleClamPizza {
-            name: String::from("NY Style Clam Pizza")
+            name: String::from("NY Style Clam Pizza"),
         }
     }
 }
@@ -56,7 +56,7 @@ pub struct NYStyleVeggiePizza {
 impl NYStyleVeggiePizza {
     pub fn new() -> Self {
         NYStyleVeggiePizza {
-            name: String::from("NY Style Veggie Pizza")
+            name: String::from("NY Style Veggie Pizza"),
         }
     }
 }

@@ -16,7 +16,7 @@ impl Beverage for HouseBlend {
     }
 }
 
-pub trait CondimentDecorator : Beverage {
+pub trait CondimentDecorator: Beverage {
     fn new(beverage: Box<dyn Beverage>) -> Self;
 }
 

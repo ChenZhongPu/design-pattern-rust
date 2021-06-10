@@ -4,12 +4,12 @@ use crate::PizzaStore;
 pub struct ChicagoPizzaStore;
 impl PizzaStore for ChicagoPizzaStore {
     fn create_pizza(&self, t: &str) -> Box<dyn Pizza> {
-       match t {
-           "cheese" => Box::new(ChicagoStyleCheesePizza::new()),
-           "veggie" => Box::new(ChicagoStyleVeggiePizza::new()),
-           "clam" => Box::new(ChicagoStyleClamPizza::new()),
-           _ =>  panic!("no such type"),
-       }
+        match t {
+            "cheese" => Box::new(ChicagoStyleCheesePizza::new()),
+            "veggie" => Box::new(ChicagoStyleVeggiePizza::new()),
+            "clam" => Box::new(ChicagoStyleClamPizza::new()),
+            _ => panic!("no such type"),
+        }
     }
 }
 
@@ -42,18 +42,18 @@ pub struct ChicagoStyleClamPizza {
 impl ChicagoStyleClamPizza {
     pub fn new() -> Self {
         ChicagoStyleClamPizza {
-            name: String::from("Chicago Style Clam Pizza")
+            name: String::from("Chicago Style Clam Pizza"),
         }
     }
 }
 
 impl Pizza for ChicagoStyleClamPizza {
     fn get_name(&self) -> &str {
-       &self.name
+        &self.name
     }
 
     fn cut(&self) {
-       println!("Cutting the pizza into square slices");
+        println!("Cutting the pizza into square slices");
     }
 }
 
@@ -64,7 +64,7 @@ pub struct ChicagoStyleVeggiePizza {
 impl ChicagoStyleVeggiePizza {
     pub fn new() -> Self {
         ChicagoStyleVeggiePizza {
-            name: String::from("Chicago Deep Dish Veggie Pizza")
+            name: String::from("Chicago Deep Dish Veggie Pizza"),
         }
     }
 }
@@ -78,4 +78,3 @@ impl Pizza for ChicagoStyleVeggiePizza {
         println!("Cutting the pizza into square slices");
     }
 }
-

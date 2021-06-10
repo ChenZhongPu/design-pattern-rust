@@ -1,5 +1,5 @@
-use crate::SimplePizzaFactory;
 use crate::Pizza;
+use crate::SimplePizzaFactory;
 
 pub struct PizzaStore;
 

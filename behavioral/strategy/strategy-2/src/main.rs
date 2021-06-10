@@ -1,6 +1,6 @@
+use strategy_2::Duck;
 use strategy_2::FlyRocketPowered;
 use strategy_2::FlyWithWings;
-use strategy_2::Duck;
 use strategy_2::MallardDuck;
 
 fn main() {

@@ -1,5 +1,7 @@
-use crate::pizza::{Pizza, CheesePizza, VeggiePizza, ClamPizza};
-use crate::pizza_ingredient_factory::{ChicagoPizzaIngredientFactory, NYPizzaIngredientFactory, PizzaIngredientFactory};
+use crate::pizza::{CheesePizza, ClamPizza, Pizza, VeggiePizza};
+use crate::pizza_ingredient_factory::{
+    ChicagoPizzaIngredientFactory, NYPizzaIngredientFactory, PizzaIngredientFactory,
+};
 
 pub trait PizzaStore {
     fn create_pizza(&self, t: &str) -> Box<dyn Pizza>;
@@ -22,11 +24,11 @@ impl PizzaStore for ChicagoPizzaStore {
         let pizza: Box<dyn Pizza>;
         match t {
             "cheese" => {
-                pizza = Box::new(CheesePizza::new(factory,"Chicago Style Cheese Pizza"));
-            },
+                pizza = Box::new(CheesePizza::new(factory, "Chicago Style Cheese Pizza"));
+            }
             "veggie" => {
                 pizza = Box::new(VeggiePizza::new(factory, "Chicago Style Veggie Pizza"));
-            },
+            }
             "clam" => {
                 pizza = Box::new(ClamPizza::new(factory, "Chicago Style Clam Pizza"));
             }
@@ -44,10 +46,10 @@ impl PizzaStore for NYPizzaStore {
         match t {
             "cheese" => {
                 pizza = Box::new(CheesePizza::new(factory, "New York Style Cheese Pizza"));
-            },
+            }
             "veggie" => {
                 pizza = Box::new(VeggiePizza::new(factory, "New York Style Veggie Pizza"));
-            },
+            }
             "clam" => {
                 pizza = Box::new(ClamPizza::new(factory, "New York Style Clam Pizza"));
             }

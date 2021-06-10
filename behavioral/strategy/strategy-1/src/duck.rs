@@ -1,4 +1,4 @@
-use crate::{FlyBehavior, QuackBehavior, FlyNoWay, MuteQuack};
+use crate::{FlyBehavior, FlyNoWay, MuteQuack, QuackBehavior};
 
 pub struct Duck {
     fly_behavior: Box<dyn FlyBehavior>,
@@ -7,7 +7,10 @@ pub struct Duck {
 
 impl Duck {
     pub fn new() -> Self {
-        Duck { fly_behavior: Box::new(FlyNoWay), quack_behavior: Box::new(MuteQuack) }
+        Duck {
+            fly_behavior: Box::new(FlyNoWay),
+            quack_behavior: Box::new(MuteQuack),
+        }
     }
 
     pub fn set_fly_behavior(&mut self, fly_behavior: Box<dyn FlyBehavior>) {
