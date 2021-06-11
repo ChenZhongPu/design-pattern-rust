@@ -15,4 +15,5 @@ Besides pure code about design patterns, necessary documents covering OO (object
 
 ## Creational
 - [Factory Method](creational/factory). Chapter 4 of HFDP Book.
-- [Abstract Method](creational/factory). Chapter 4 of HFDP Book.
+- [Abstract Factory](creational/factory). Chapter 4 of HFDP Book.
+- [Singleton](creational/singleton). Chapter 5 of HFDP Book. 
