@@ -14,7 +14,7 @@ impl SimpleRemoteControl {
         self.slot = slot;
     }
 
-    pub fn botton_pressed(&self) {
+    pub fn button_pressed(&self) {
         self.slot.execute();
     }
 }
