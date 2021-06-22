@@ -25,7 +25,7 @@ impl Light {
         if level == 0 {
             self.off();
         } else {
-            println!("The light is dimmed to {}%", level);
+            println!("The {} light is dimmed to {}%", self.location, level);
         }
     }
 

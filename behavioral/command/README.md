@@ -32,3 +32,18 @@ self.undo_command = self.on_commands[slot];
 ```
 
 There are several solutions. One is to make `Box<dyn Command>` clone-able. See more at [How to clone a struct storing a boxed trait object?](https://stackoverflow.com/questions/30353462). Another choice is to change `Box<dyn Command>` to `Rc<RefCell<dyn Command>>`.
+
+# Discussion
+- We can extend `Command Pattern` to `Macro Command`, which has a set of commands in one command.
+
+```rust
+struct MacroCommand {
+    commands: Vec<Rc<RefCell<dyn Command>>>>,
+}
+impl Command for MacroCommand {
+    fn execute(&mut self) {
+       //... 
+    }
+}
+```
+- (queuing requests) `Command` give us a way to package a piece of computation (a receiver and a set of actions), and the computation itself may be invoked long after submitting. We can take this scenario and apply it to many useful applications, such as schedulers, thread pools, and job queues, to name a few. 
