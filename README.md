@@ -9,11 +9,12 @@ Besides pure code about design patterns, necessary documents covering OO (object
 ## Behavioral
 - [Strategy Pattern](behavioral/strategy). Chapter 1 of HFDP Book.
 - [Observer Pattern](behavioral/observer). Chapter 2 of HFDP Book.
+- [Command Pattern](behavioral/command). Chapter 6 of HFDP Book.
 
 ## Structural
 - [Decorator Pattern](structural/decorator). Chapter 3 of HFDP Book.
 
 ## Creational
-- [Factory Method](creational/factory). Chapter 4 of HFDP Book.
-- [Abstract Factory](creational/factory). Chapter 4 of HFDP Book.
-- [Singleton](creational/singleton). Chapter 5 of HFDP Book. 
+- [Factory Method Pattern](creational/factory). Chapter 4 of HFDP Book.
+- [Abstract Factory Pattern](creational/factory). Chapter 4 of HFDP Book.
+- [Singleton Pattern](creational/singleton). Chapter 5 of HFDP Book. 
