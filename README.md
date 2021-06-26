@@ -12,6 +12,7 @@ Besides pure code about design patterns, necessary documents covering OO (object
 - [Command Pattern](behavioral/command). Chapter 6 of HFDP Book.
 - [Template Method Pattern](behavioral/template). Chapter 8 of HFDP Book.
 - [Iterator Pattern](behavioral/iterator). Chapter 9 of HFDP Book.
+- [State Pattern](behavioral/state). Chapter 10 of HFDP Book.
 
 ## Structural
 - [Decorator Pattern](structural/decorator). Chapter 3 of HFDP Book.
