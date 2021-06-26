@@ -31,8 +31,10 @@ class State {
 See more at [Why can't I store a value and a reference to that value in the same struct?
 ](https://stackoverflow.com/questions/32300132). 
 
-In our code, we choose `Pin` like the [Rust Book: Implementing an Object-Oriented Design Pattern](https://doc.rust-lang.org/book/ch17-03-oo-design-patterns.html) does. The key is that we change the composition to the parameter:
+In our code, we mimic the implementation in [Rust Book: Implementing an Object-Oriented Design Pattern](https://doc.rust-lang.org/book/ch17-03-oo-design-patterns.html). The key is that we change the composition to the parameter:
 
 ```rust
 fn dispense<'a>(self: Box<Self>, machine: &'a mut GumballMachine) -> Box<dyn State>;
 ```
+
+BTW, [Rust Book: Implementing an Object-Oriented Design Pattern](https://doc.rust-lang.org/book/ch17-03-oo-design-patterns.html) also provides an alternative solution: *Encoding States and Behavior as Types*.
