@@ -6,6 +6,8 @@
 
 Besides pure code about design patterns, necessary documents covering OO (object-oriented) principles and idioms in `Rust` are also included. Throughout the README files, I will use **HFDP Book** to refer to [Head First Design Patterns](https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X).
 
+> `A Pattern` is a solution to a problem in a context.
+
 ## Behavioral
 - [Strategy Pattern](behavioral/strategy). Chapter 1 of HFDP Book.
 - [Observer Pattern](behavioral/observer). Chapter 2 of HFDP Book.
