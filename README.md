@@ -19,7 +19,7 @@ Besides pure code about design patterns, necessary documents covering OO (object
 - [Adapter Pattern](structural/adapter). Chapter 7 of HFDP Book.
 - [Facade Pattern](structural/facade). Chapter 7 of HFDP Book.
 - [Composite Pattern](structural/composite). Chapter 9 of HFDP Book.
-- [Proxy Pattern](structural/proxy). Chapter 10 of HFDP Book.
+- [Proxy Pattern](structural/proxy). Chapter 11 of HFDP Book.
 
 ## Creational
 - [Factory Method Pattern](creational/factory). Chapter 4 of HFDP Book.
