@@ -17,7 +17,7 @@ trait Subject {
 ```
 and then `impl Subject for WeatherData`.
 
-A small trick for most beginners is how to main a collection of observers in a subject. If we still use the trait object `Box<dyn Observer>`, we may find it is impossible to achieve `remove` operation since [Vec](https://doc.rust-lang.org/std/vec/struct.Vec.html)'s `remove` method requires an index. 
+A small trick for most beginners is how to maintain a collection of observers in a subject. If we still use the trait object `Box<dyn Observer>`, we may find it is impossible to achieve `remove` operation since [Vec](https://doc.rust-lang.org/std/vec/struct.Vec.html)'s `remove` method requires an index. 
 
 (note, [lpxxn](https://github.com/lpxxn/rust-design-pattern/blob/master/behavioral/observer.rs) did not use trait object, so it only supports one specific type of `Observer`.)
 
