@@ -11,11 +11,11 @@ The code of [observer.rs](observer/src/observer.rs) is very easy to understand. 
 ```rust
 trait Subject {
     fn register_observer(xxx);
-    fn remove_oserver(xxx);
+    fn remove_observer(xxx);
     fn notify_observers(xxx);
 }
 ```
-and then `impl Subject for WeatherData`.
+and then `impl Subject for WeatherData`. Note that if `remove_observer()` is not required, the implementation is much easier.
 
 A small trick for most beginners is how to maintain a collection of observers in a subject. If we still use the trait object `Box<dyn Observer>`, we may find it is impossible to achieve `remove` operation since [Vec](https://doc.rust-lang.org/std/vec/struct.Vec.html)'s `remove` method requires an index. 
 
@@ -58,5 +58,5 @@ To address the problem in `Observer 1`, we have to use *Interior mutability*. Se
 
 In fact, `Box<RefCell<T>>` will make code cleaner, but it always moves. And we can use `Rc<RefCell<T>>`, and refer to [Rc<RefCell<Dog>> to Rc<RefCell<dyn AnimalT>>](https://users.rust-lang.org/t/rc-refcell-dog-to-rc-refcell-dyn-animalt/29511).
 
-## to do
-Try to make it concise.
+## Observer 3
+Still, we have an important question to be solved in both `Observer 1` and `Observer 2`: **should the observer also know the subject**? According to the standard definition, the question is *yes*. Therefore, we have to address the notorious **cycle references** issue. (*TO DO*)
