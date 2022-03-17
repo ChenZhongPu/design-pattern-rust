@@ -37,7 +37,7 @@ impl Observer for PredictDisplay {
     fn update(&self, tmp: f64) {
         // a fake predication
         println!(
-            "PredicatDisplay ({}) predicts temperature = {}",
+            "PredictDisplay ({}) predicts temperature = {}",
             self.id,
             tmp + 0.1
         );

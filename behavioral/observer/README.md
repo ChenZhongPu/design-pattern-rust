@@ -58,5 +58,18 @@ To address the problem in `Observer 1`, we have to use *Interior mutability*. Se
 
 In fact, `Box<RefCell<T>>` will make code cleaner, but it always moves. And we can use `Rc<RefCell<T>>`, and refer to [Rc<RefCell<Dog>> to Rc<RefCell<dyn AnimalT>>](https://users.rust-lang.org/t/rc-refcell-dog-to-rc-refcell-dyn-animalt/29511).
 
-## Observer 3
-Still, we have an important question to be solved in both `Observer 1` and `Observer 2`: **should the observer also know the subject**? According to the standard definition, the question is *yes*. Therefore, we have to address the notorious **cycle references** issue. (*TO DO*)
+# Observer 3
+Still, we have an important question to be solved in both `Observer 1` and `Observer 2`: **should the observer also know the subject**? We don't want to address the notorious **cycle references** issue.
+
+Here, we implement a simple solution by `Weak` references (see more at [How can I implement the observer pattern in Rust?](https://stackoverflow.com/questions/37572734)). The following is how to remove an observer:
+
+```rust
+pub fn remove_observer(&mut self, observer: &Rc<dyn Observer>) {
+    if let Some(p) = self.observers.iter().position(|x| match x.upgrade() {
+        Some(x_ptr) => Rc::ptr_eq(&x_ptr, observer),
+        None => false,
+    }) {
+        self.observers.swap_remove(p);
+    }
+}
+```
