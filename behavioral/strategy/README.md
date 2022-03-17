@@ -40,13 +40,19 @@ But, if we try to consider inheritances like `HFDP Book`, we will find that *too
 It is possible to achieve repetition-free by macro, but it would add extra complexity. 
 
 # Strategy 2
-Our improvement for the problems of `Strategy 1` is quite straightforward. We do not have to let `Duck` refer to a behavior in its fields. Instead, we move it to the parameters of `perform_fly`.
+Our improvement for the problems of `Strategy 1` is quite straightforward. We do not have to let `Duck` refer to a behavior in its fields. Instead, we move it to the parameters of `perform_fly`:
 
 ```rust
 fn perform_fly<T: FlyBehavior>(&self, fly: &T) {
     fly.fly();
 }
 ```
+Or using the `impl Trait` syntax sugar:
+
+```rust
+fn perform_fly(&self, fly: &impl FlyBehavior)
+```
+
 In this way, any new duck will have a concise implementation. BTW, like `HFDP Book`, we also provide a `display` method for specific implementations, and a `swim` method as a default implementation.
 
 [1]: <https://www.ncameron.org/blog/dyn-trait-and-impl-trait-in-rust> "dyn Trait and impl Trait in Rust"
