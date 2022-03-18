@@ -39,6 +39,16 @@ Furthermore, `Box` would move the object, so every time we would like to registe
 
 See more at [Lifetime elision](https://doc.rust-lang.org/reference/lifetime-elision.html).
 
+By the way, when we only borrow the object, a unique id is not necessary, because we can compare them through pointer addresses. The complete code can be found at [observer1x](observer1x).
+
+```rust
+pub fn remove_observer(&mut self, observer: &'a dyn Observer) {
+    if let Some(p) = self.observers.iter().position(|&x| x as *const _ == observer as *const _) {
+        self.observers.swap_remove(p);
+    }
+}
+```
+
 ## Problem: Does it REALLY update()?
 Many tutorials in terms of `Observer Pattern` only simply print some information. But, in reality, it should *really* update something. So, we expect
 
