@@ -25,7 +25,7 @@ pub struct Mocha {
 }
 
 impl CondimentDecorator for Mocha {
-    fn new(beverage: Box<dyn Beverage>) -> Self {
+    fn new(beverage: Box<dyn Beverage>) -> Mocha {
         Mocha { beverage }
     }
 }
