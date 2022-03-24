@@ -44,4 +44,4 @@ pub struct VeggiePizza {
     factory: Box<dyn PizzaIngredientFactory>,
 }
 ```
-Note that how those ingredients are assembled has nothing to do the pattern itself (i.e., how the store crates a pizza). Here `Pizza` has a reference to `factory`, and this is the logic for clients.
+Note that how those ingredients are assembled has nothing to do the pattern itself (i.e., how the store creates a pizza). Here `Pizza` has a reference to `factory`, and this is the logic for clients.
