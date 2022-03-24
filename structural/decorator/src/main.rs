@@ -10,4 +10,5 @@ fn main() {
 
     let whip = Whip::new(Box::new(mocha));
     println!("Espresso with 2 mocha and 1 whip: {}", whip.cost());
+
 }
