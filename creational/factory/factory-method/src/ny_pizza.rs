@@ -26,7 +26,7 @@ impl NYStyleCheesePizza {
 }
 
 impl Pizza for NYStyleCheesePizza {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }
@@ -44,7 +44,7 @@ impl NYStyleClamPizza {
 }
 
 impl Pizza for NYStyleClamPizza {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }
@@ -62,7 +62,7 @@ impl NYStyleVeggiePizza {
 }
 
 impl Pizza for NYStyleVeggiePizza {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }

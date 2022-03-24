@@ -1,14 +1,12 @@
 use crate::pizza::{CheesePizza, ClamPizza, Pizza, VeggiePizza};
-use crate::pizza_ingredient_factory::{
-    ChicagoPizzaIngredientFactory, NYPizzaIngredientFactory, PizzaIngredientFactory,
-};
+use crate::pizza_ingredient_factory::{ChicagoPizzaIngredientFactory, NYPizzaIngredientFactory};
 
 pub trait PizzaStore {
     fn create_pizza(&self, t: &str) -> Box<dyn Pizza>;
 
     fn order_pizza(&self, t: &str) -> Box<dyn Pizza> {
         let mut pizza = self.create_pizza(t);
-        println!("--- Making a {} ---", pizza.get_name());
+        println!("--- Making a {} ---", pizza.name());
         pizza.prepare();
         pizza.bake();
         pizza.cut();
@@ -21,20 +19,18 @@ pub struct ChicagoPizzaStore;
 impl PizzaStore for ChicagoPizzaStore {
     fn create_pizza(&self, t: &str) -> Box<dyn Pizza> {
         let factory = Box::new(ChicagoPizzaIngredientFactory);
-        let pizza: Box<dyn Pizza>;
         match t {
             "cheese" => {
-                pizza = Box::new(CheesePizza::new(factory, "Chicago Style Cheese Pizza"));
-            }
+                Box::new(CheesePizza::new(factory, "Chicago Style Cheese Pizza"))
+            },
             "veggie" => {
-                pizza = Box::new(VeggiePizza::new(factory, "Chicago Style Veggie Pizza"));
-            }
+                Box::new(VeggiePizza::new(factory, "Chicago Style Veggie Pizza"))
+            },
             "clam" => {
-                pizza = Box::new(ClamPizza::new(factory, "Chicago Style Clam Pizza"));
-            }
+                Box::new(ClamPizza::new(factory, "Chicago Style Clam Pizza"))
+            },
             _ => panic!("no such type"),
         }
-        pizza
     }
 }
 

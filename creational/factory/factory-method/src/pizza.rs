@@ -1,19 +1,19 @@
 pub trait Pizza {
-    fn get_name(&self) -> &str;
+    fn name(&self) -> &str;
 
     fn prepare(&self) {
-        println!("Preparing {}", self.get_name());
+        println!("Preparing {}", self.name());
     }
 
     fn bake(&self) {
-        println!("Baking {}", self.get_name());
+        println!("Baking {}", self.name());
     }
 
     fn cut(&self) {
-        println!("Cutting {}", self.get_name());
+        println!("Cutting {}", self.name());
     }
 
     fn boxes(&self) {
-        println!("Boxing {}", self.get_name());
+        println!("Boxing {}", self.name());
     }
 }

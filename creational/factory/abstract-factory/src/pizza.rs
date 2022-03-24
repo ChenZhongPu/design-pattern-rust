@@ -13,7 +13,7 @@ pub trait Pizza: fmt::Display {
     fn boxes(&self) {
         println!("Place pizza in official PizzaStore box");
     }
-    fn get_name(&self) -> &str;
+    fn name(&self) -> &str;
 }
 
 pub struct CheesePizza {
@@ -44,7 +44,7 @@ impl Pizza for CheesePizza {
         self.cheese = Some(self.factory.create_cheese());
     }
 
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }
@@ -91,7 +91,7 @@ impl Pizza for ClamPizza {
         self.clam = Some(self.factory.create_clam());
     }
 
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }
@@ -139,7 +139,7 @@ impl Pizza for VeggiePizza {
         self.veggies = Some(self.factory.create_veggies());
     }
 
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }

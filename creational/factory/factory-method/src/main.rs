@@ -5,8 +5,8 @@ fn main() {
     let chicago_store = ChicagoPizzaStore;
 
     let pizza = ny_store.order_pizza("cheese");
-    println!("Ethan ordered a {}", pizza.get_name());
+    println!("Ethan ordered a {}", pizza.name());
 
     let pizza = chicago_store.order_pizza("cheese");
-    println!("Joel ordered a {}", pizza.get_name());
+    println!("Joel ordered a {}", pizza.name());
 }

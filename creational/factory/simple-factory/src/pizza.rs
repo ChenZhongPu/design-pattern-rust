@@ -1,20 +1,20 @@
 pub trait Pizza {
-    fn get_name(&self) -> &str;
+    fn name(&self) -> &str;
 
     fn prepare(&self) {
-        println!("Preparing {}", self.get_name());
+        println!("Preparing {}", self.name());
     }
 
     fn bake(&self) {
-        println!("Baking {}", self.get_name());
+        println!("Baking {}", self.name());
     }
 
     fn cut(&self) {
-        println!("Cutting {}", self.get_name());
+        println!("Cutting {}", self.name());
     }
 
     fn boxes(&self) {
-        println!("Boxing {}", self.get_name());
+        println!("Boxing {}", self.name());
     }
 }
 
@@ -31,7 +31,7 @@ impl CheesePizza {
 }
 
 impl Pizza for CheesePizza {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }
@@ -49,7 +49,7 @@ impl ClamPizza {
 }
 
 impl Pizza for ClamPizza {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }
@@ -67,7 +67,7 @@ impl VeggiePizza {
 }
 
 impl Pizza for VeggiePizza {
-    fn get_name(&self) -> &str {
+    fn name(&self) -> &str {
         &self.name
     }
 }

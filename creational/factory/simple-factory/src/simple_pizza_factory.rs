@@ -11,7 +11,7 @@ impl SimplePizzaFactory {
             "cheese" => Box::new(CheesePizza::new()),
             "clam" => Box::new(ClamPizza::new()),
             "veggie" => Box::new(VeggiePizza::new()),
-            _ => panic!("un known pizza type"),
+            _ => panic!("unknown pizza type"),
         }
     }
 }
