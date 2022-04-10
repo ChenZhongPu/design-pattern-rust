@@ -16,14 +16,15 @@ In `HFDP Book`, the pizza store holds a reference to the factory, but it is not 
 
 Firstly, we merge `store` and `factory` here; in other words, `store` is essentially a `factory` which can produce products. In the light of `dependency inversion principle`, both `store` and `pizza` are abstract (*trait* in Rust).
 
-A factory method handles object creation and encapsulates it in a subclass. Note that the method of `factory` is usually a static one (*associate function* in Rust), and the refactor is simple:
+A factory method handles object creation and encapsulates it in a subclass:
 
 ```rust
 trait PizzaStore {
-    fn create_pizza(t: &str) -> Box<dyn Pizza>;
+    fn create_pizza(&self, t: &str) -> Box<dyn Pizza>;
+}
 ```
 
-There are two main roles here: `Factory` and `Product`.
+There are two main roles here: `Factory` (or `Creator`) and `Product`. And generally, there is also a method in `Factory` using the `Product`; in other words, the application code (i.e., the use of a product) is also found in `Factory`. In our this example, it is the `order_pizza()` method.
 
 # Abstract Factory
 > `The Abstract Factory Pattern` provides an interface for creating families of related or dependent objects without specifying their concrete classes.

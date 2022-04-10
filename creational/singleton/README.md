@@ -36,16 +36,23 @@ public static Singleton getInstance() {
 }
 ```
 
-**HFDP Book**, as well as **Effective Java**, also provide an better approach:
+**HFDP Book**, as well as **Effective Java**, also provide a better approach:
 
 > a single-element
 enum type is often the best way to implement a singleton.
 
-```java
-public enum Singleton {
-    UNIQUE_INSTANCE;
-    // more useful fields here
+Back at Rust, the good thing is that it provides better concurrency guarantee, and the bad thing is that `static` filed is not allowed in structures. It is highly recommended to use [lazy_static](https://crates.io/crates/lazy_static) if you want to use `static`. As for the `Singleton` pattern, we also adopt the `enum` type as the implementation.
+
+```rust
+pub enum Singleton {
+    INSTANCE,
 }
 ```
 
-Back at Rust, the good thing is that it provides better concurrency guarantee, and the bad thing is that `static` filed is not allowed in structures. It is highly recommended to use [lazy_static](https://crates.io/crates/lazy_static) if you want to use `static`. As for the `Singleton` pattern, we adopt the enum type as the implementation.
+What's more, we can also attach data to the `enum` if necessary.
+
+```rust
+pub enum Singleton {
+    INSTANCE(String),
+}
+```
