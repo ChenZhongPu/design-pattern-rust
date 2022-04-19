@@ -3,10 +3,12 @@
 ![command](command.jpg)
 
 # Use Case
-In the Chapter 6 of `HFDP Book`, we would like to decouple the remote and devices; and we able to plugged different devices to remote's slots and control *on*, *off* by pressing buttons.
+In the Chapter 6 of `HFDP Book`, we would like to decouple the remote and devices; and we are able to plugged different devices to remote's slots and control *on*, *off* by pressing buttons.
+
+Four terms always associated with the command pattern are command (e.g., `LightOnCommand`), receiver (e.g., `Light`), invoker (e.g., `SimpleRemoteControl`) and client. 
 
 # Command 1
-In a simple form, imagine there is only one slot on the remote control. For simplicity, we suppose `Command` will not update the *receiver*, and `receiver` will be `moved`. Similar to what we did in `Observer Pattern`, we can use `Rc<Ref<dyn T>>` to make it possible, and we adopt such design in `Command 2`.
+In a simple form, imagine there is only one slot on the remote control. For simplicity, we suppose `Command` will not update the *receiver*, and `receiver` will be `moved`. Similar to what we did in `Observer Pattern`, we can use `Rc<RefCell<dyn T>>` to make it possible, and we adopt such design in `Command 2`.
 
 ```rust
 struct SimpleRemoteControl {

@@ -9,8 +9,8 @@ fn main() {
     let garage_door_open = GarageDoorOpenCommand::new(garage_door);
 
     remote.set_command(Box::new(light_on));
-    remote.botton_pressed();
+    remote.button_pressed();
 
     remote.set_command(Box::new(garage_door_open));
-    remote.botton_pressed();
+    remote.button_pressed();
 }
