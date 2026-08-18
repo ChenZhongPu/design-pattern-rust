@@ -1,3 +1,5 @@
+
+
 # Head First Design Patterns in Rust
 
 ![rust](rust.png)
@@ -25,5 +27,5 @@ Besides pure code about design patterns, necessary documents covering OO (object
 
 ## Creational
 - [Factory Method Pattern](creational/factory). Chapter 4 of HFDP Book.
-- [Abstract Factory Pattern](creational/factory). Chapter 4 of HFDP Book.
-- [Singleton Pattern](creational/singleton). Chapter 5 of HFDP Book. 
+- [Abstract Factory Pattern](creational/factory/abstract-factory). Chapter 4 of HFDP Book.
+- [Singleton Pattern](creational/singleton). Chapter 5 of HFDP Book.
